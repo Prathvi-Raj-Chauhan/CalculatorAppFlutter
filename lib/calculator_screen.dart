@@ -187,17 +187,16 @@ class _CalculatorscreenState extends State<Calculatorscreen> {
     // if is operand not "."
     if (value != Btn.dot && int.tryParse(value) == null) {
       //operand pressed
-      operand = value;
+      operand = value; // give operand the pressed button value
     }
     // assign value to number1 variable
     else if (number1.isEmpty || operand.isEmpty) {
       // check if value is "."  ex:-number1 = "1.2"
-      if (value == Btn.dot && number1.contains(Btn.dot)) return;
+      if (value == Btn.dot && number1.contains(Btn.dot)) return; // if number 1 already have a decimal and again decimal is pressed do not append it again
       if (value == Btn.dot && (number1.isEmpty || number1 == Btn.n0)) {
-        // ex: number1 = " " || "0"
-        value = "0.";
+        value = "0."; // we are in the block if dot is pressed and number 1 is zero so a dot is pressed first already 
       }
-      number1 += value;
+      number1 += value; //  now dot is not pressed and any other number is pressed and it will be added to number 1
     } else if (number2.isEmpty || operand.isNotEmpty) {
       //number2 = "1.2"
       if (value == Btn.dot && number2.contains(Btn.dot)) return;
