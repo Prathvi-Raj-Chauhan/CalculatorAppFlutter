@@ -142,8 +142,7 @@ class _CalculatorscreenState extends State<Calculatorscreen> {
 
   void convertToPercentage() {
     if (number1.isNotEmpty && operand.isNotEmpty && number2.isNotEmpty) {
-      // calculate before conversion
-      // TODO
+      calculate();
     }
     if (operand.isNotEmpty) {
       // cannot be converted
@@ -211,8 +210,7 @@ class _CalculatorscreenState extends State<Calculatorscreen> {
     setState(() {});
   }
 
-
-  // to give color to the buttons 
+  // to give color to the buttons
   Color getBtnColor(value) {
     return [Btn.del, Btn.clr].contains(value)
         ? Colors.blueGrey
