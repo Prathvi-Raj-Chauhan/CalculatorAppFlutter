@@ -188,9 +188,6 @@ class _CalculatorscreenState extends State<Calculatorscreen> {
     // if is operand not "."
     if (value != Btn.dot && int.tryParse(value) == null) {
       //operand pressed
-      if (operand.isNotEmpty && number2.isNotEmpty) {
-        // TODO -- calculate the equaltion befores assigining new operand
-      }
       operand = value;
     }
     // assign value to number1 variable
